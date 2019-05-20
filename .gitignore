@@ -1,0 +1,6 @@
+.coverage
+__pycache__
+htmlcov
+*.swp
+.python-version
+.venv

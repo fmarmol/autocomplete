@@ -1,0 +1,18 @@
+version: 2
+jobs:
+  build:
+    docker:
+      - image: python:3-stretch
+    steps:
+      - checkout
+      - run:
+          name: Install dependecies
+          command: pip install pipenv && pipenv install
+      - run:
+          name: Tests and coverage
+          command: pipenv run pytest --cov=. --cov-report=term --cov-report=html .
+      - store_artifacts:
+          path: htmlcov
+      - run:
+          name: Quality of code
+          command: pipenv run pylint autocomplete.py
