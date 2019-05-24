@@ -87,7 +87,7 @@ class AutoComplete:
             node_child = Node(character, end=is_last_character)
             node = node.add_child(node_child)
 
-    def autocomplete(self, prefix: str):
+    def autocomplete(self, prefix: str) -> [str]:
         """
         autocomplete performs the autocompletion from a prefix
         :param prefix: prefix from which the autocompletion starts

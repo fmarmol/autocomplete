@@ -53,4 +53,4 @@ The walk through the Trie would have some kind of sharding mechanism. The config
 - **What would you change if the requirements were to match any portion of the
 keywords (for example, given the string “pro”, the program could suggest the
 keyword “reprobe”) ?**:
-The search of words matching this pattern with the actual algorithm could be really expensive (probably too much). We need to add some kind of fuzzy find algorithm using a Levenshtein metric for example. This way we can select only good candidates in the Trie.
+Given a pattern and assuming that the pattern have to be a prefix of one or more suffixes of a word, we can construct all suffixes for each node and walkthrough them to find a match.
